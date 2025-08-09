@@ -2,7 +2,6 @@ body {
     color: white;
     background: linear-gradient(180deg, #0f0f1b, #1a1a2e);
     margin: 0;
-    margin-bottom: 100px;
     font-family: "Chakra Petch", sans-serif;
 }
 
@@ -14,25 +13,27 @@ header {
     text-align: center;
     font-weight: bold;
     background-color: #111;
+    letter-spacing: 2px;
 }
 
 .destaque {
     background: linear-gradient(90deg, #6c63ff33, #00d4ff33);
-    padding: 80px 0;
+    padding: 50px 10%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    gap: 30px;
 }
 
 .chamada-texto {
-    margin-right: 5%;
-    max-width: 400px;
+    flex: 1;
+    min-width: 300px;
 }
 
 h1 {
     font-size: 40px;
-    margin: 0 0 10px;
+    margin-bottom: 15px;
     color: #00d4ff;
 }
 
@@ -41,26 +42,39 @@ p {
     color: #ddd;
 }
 
+.video-container {
+    flex: 1;
+    min-width: 300px;
+    aspect-ratio: 16/9;
+}
+
+.video-container iframe {
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 15px #000;
+}
+
 .categoria {
-    padding: 40px;
+    padding: 40px 10%;
 }
 
 .categoria h2 {
     font-size: 28px;
     margin-bottom: 20px;
     color: #6c63ff;
+    text-align: center;
 }
 
 .categoria-videos {
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
     gap: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
 }
 
 .categoria-videos img {
-    width: 200px;
-    height: 300px;
+    width: 100%;
+    height: 280px;
     object-fit: cover;
     border-radius: 10px;
     transition: transform 0.3s, box-shadow 0.3s;
@@ -70,4 +84,20 @@ p {
 .categoria-videos img:hover {
     transform: scale(1.05);
     box-shadow: 0 0 20px #6c63ff;
+}
+
+/* Ajuste para celular */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 28px;
+    }
+
+    .destaque {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .chamada-texto {
+        margin-right: 0;
+    }
 }
